@@ -1,5 +1,5 @@
-Device configuration for Redmi 2
+Device configuration for RIDGE 4G
 ==============================
 This device tree supports:
 
-    redmi2 (wt88047 variant)
+    RIDGE 4G (l5510 variant)

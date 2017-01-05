@@ -16,7 +16,7 @@
 FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-DEVICE_PATH := device/wingtech/wt88047
+DEVICE_PATH := device/wiko/l5510
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bootloader
@@ -25,14 +25,14 @@ TARGET_BOOTLOADER_BOARD_NAME :=
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
-TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
+TARGET_KERNEL_SOURCE := kernel/wiko/msm8916
+TARGET_KERNEL_CONFIG := cyanogenmod_l5510_defconfig
 
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
-# WT88047 init
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.c
+# l5510 init
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_l5510.c
 TARGET_UNIFIED_DEVICE := true
 
 # Bluetooth
@@ -102,4 +102,4 @@ BOARD_SEPOLICY_UNION += \
     file_contexts
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+-include vendor/wiko/l5510/BoardConfigVendor.mk

@@ -12,16 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/wingtech/wt88047/full_wt88047.mk)
+$(call inherit-product, device/wiko/l5510/full_l5510.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := HM2014811,HM2014812,HM2014813,HM2014814,HM2014815,HM2014816,HM2014817,HM2014818,HM2014819,HM2014820,HM2014821,HM2014112
+TARGET_OTA_ASSERT_DEVICE := l5510,l900
 
-PRODUCT_NAME := cm_wt88047
-BOARD_VENDOR := wingtech
-PRODUCT_DEVICE := wt88047
+PRODUCT_NAME := cm_l5510
+BOARD_VENDOR := wiko
+PRODUCT_DEVICE := l5510
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-wiko
