@@ -12,6 +12,9 @@ persist.data.target=dpm1
 # Display
 ro.sf.lcd_density=320
 
+# Nav Bar
+qemu.hw.mainkeys=0
+
 # Radio
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 persist.radio.multisim.config=dsds
