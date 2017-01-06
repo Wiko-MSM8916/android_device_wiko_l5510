@@ -19,21 +19,29 @@ include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 DEVICE_PATH := device/wiko/l5510
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME :=
-
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
+BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 androidboot.selinux=permissive
+BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/wiko/msm8916
 TARGET_KERNEL_CONFIG := cyanogenmod_l5510_defconfig
 
+# Arch
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+
 # CPU
 TARGET_CPU_CORTEX_A53 := true
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # l5510 init
 TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_l5510.c
 TARGET_UNIFIED_DEVICE := true
+
+# Audio
+AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := false
+TARGET_QCOM_AUDIO_VARIANT := caf
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -44,13 +52,13 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 2048
 
 # Camera
-BOARD_CAMERA_SENSORS := \
-    ov2680_5987fhq \
-    ov8865_q8v18a \
-    ov2680_skuhf
 TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_TS_MAKEUP := true
+BOARD_USES_LEGACY_MMAP := true
+
+# Charger
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # DPM NSRM Feature
 TARGET_LDPRELOAD := libNimsWrap.so
