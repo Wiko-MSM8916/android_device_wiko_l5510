@@ -155,6 +155,9 @@ PRODUCT_PACKAGES += \
 # Prebuilt webview
 PRODUCT_PACKAGES += \
     webview
+    
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
