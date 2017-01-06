@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -57,8 +57,10 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera
 
-# IO Scheduler
+# Prop configs
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=320 \
+    qemu.hw.mainkeys=0 \
     sys.io.scheduler=bfq \
     ro.min_freq_0=400000
 
