@@ -206,10 +206,10 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     ERROR("Detected board ID=%s\n", board_id);
 
     if (strcmp(board_id, "l5510") == 0) { 
-        property_set("ro.build.product", "HM2014811");
-        property_set("ro.product.device", "HM2014811");
-        property_set("ro.product.model", "2014811");
-        property_set("ro.product.name", "2014811");
+        property_set("ro.build.product", "l5510");
+        property_set("ro.product.device", "l5510");
+        property_set("ro.product.model", "RIDGE 4G");
+        property_set("ro.product.name", "l5510");
         property_set("ro.telephony.default_network", "9,1");
         property_set("telephony.lteOnCdmaDevice", "0");
     }
