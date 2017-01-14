@@ -25,8 +25,6 @@ BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 androidboot.selinux
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/wiko/msm8916
 TARGET_KERNEL_CONFIG := cyanogenmod_l5510_defconfig
-BOARD_MKBOOTIMG_ARGS := --dt device/wiko/l5510/dt.img --ramdisk_offset 0x01000000--tags_offset 0x00000100
-
 # Arch
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
