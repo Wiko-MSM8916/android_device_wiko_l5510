@@ -1,139 +1,44 @@
-#
-# system.prop for msm8916
-#
-
-#rild.libpath=/system/lib/libreference-ril.so
-rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
-rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
-ro.telephony.default_network=9
-persist.sys.logkit.ctrlcode=0
-debug.sf.hw=1
-debug.egl.hw=1
-debug.composition.type=c2d
-persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
-debug.mdpcomp.idletime=550
-persist.hwc.ptor.enable=true
-dalvik.vm.heapsize=36m
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-debug.sf.gpu_comp_tiling=0
-
-#
-# system props for the cne module
-#
-persist.cne.feature=4
-
-#
-# system props for the dpm module
-#
-persist.dpm.feature=3
-
-# System props for the MM modules
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-mm.enable.smoothstreaming=true
-mm.disable.sec_smoothstreaming=true
-media.aac_51_output_enabled=true
-# Codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC DIVX DIVXHD
-mm.enable.qcom_parser=3407871
-
-#
-# system props for the data modules
-#
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
-
-# system props for time-services
-persist.timed.enable=true
-
-#
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-ro.opengles.version=196608
-
-# System property for cabl
-ro.qualcomm.cabl=0
-
-#
-# System props for telephony
-# System prop to turn on CdmaLTEPhone always
-telephony.lteOnCdmaDevice=1
-persist.omh.enabled=false
-
-#
-# System props for bluetooh
-# System prop to turn on hfp client
-bluetooth.hfp.client=1
-
-# Simulate sdcard on /data/media
-#
-persist.fuse_sdcard=true
-
-#
-# snapdragon value add features
-#
-ro.qc.sdk.audio.ssr=false
-ro.qc.sdk.audio.fluencetype=none
+# Audio
+ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
-# Set for msm8916
-tunnel.audio.encode = false
-# Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=32
-# Use VERY_HIGH_QUALITY for audio resampler
-af.resampler.quality=4
-# Enable offload audio video playback by default
-av.offload.enable=false
-# Enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=true
-#
-# System property for FM transmitter
-#
-ro.fm.transmitter=false
-# Enable dsp gapless mode by default
-audio.offload.gapless.enabled=true
 
-# Audio voice concurrency related flags
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=true
-voice.voip.conc.disabled=true
-# Start  # LINE<modify default USB debugging><2014.12.05><suda>
-#Set composition for USB
-persist.sys.usb.config=diag,serial_smd,rmnet_bam
+# Connectivity Engine support
+persist.cne.feature=4
+persist.dpm.feature=3
+persist.data.target=dpm1
 
-# Set read only default composition for USB
-ro.sys.usb.default.config=diag,serial_smd,rmnet_bam,adb
+# Display
+ro.sf.lcd_density=320
 
-# Set max background services
-ro.config.max_starting_bg=8
+# Radio
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+persist.radio.multisim.config=dsds
+ril.ecclist=112,911,110,122,119,120,000,118
+ril.ecclist1=112,911,110,122,119,120,000,118
+ril.subscription.types=RUIM
+persist.radio.rat_on=combine
 
-# Property to enable user to access Google WFD settings
-persist.debug.wfd.enable=1
-# Propery to enable VDS WFD solution
-persist.hwc.enable_vds=1
-ro.min_freq=800000
+ro.ril.multi_rat_capable=true
 
-# PPPOE config enable
-ro.config.pppoe_enable=1
+# Disable the thumbnail encoding in order to reduce the power
+persist.camera.tn.disable=1
 
-persist.radio.no_cons_man_roam=1
-persist.radio.ignore_dom_time=500
+# use 3 threads max for dex2oat
+ro.sys.fw.dex2oat_thread_count=3
+
+# relax sensor fusion mag field filter
+ro.fusion.magfield.max=250
+
+# Factory Reset Protection
+ro.frp.pst=/dev/block/bootdevice/by-name/config
+
+# System property for PIP support
+persist.camera.pip.support=0
+
+# Disable all camera debug
+persist.camera.hal.debug.mask=0
+
+# Camera sensors
+ro.camera.sensors=ov8865_q8v18a,ov2680_skuhf,ov2680_5987fhq
