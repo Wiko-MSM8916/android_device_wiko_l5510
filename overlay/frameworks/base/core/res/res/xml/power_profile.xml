@@ -34,6 +34,9 @@
         <value>307</value>
         <value>353</value>
     </array>
-    <item name="cpu.idle">1.6</item>
-    <item name="battery.capacity">2200</item>
+  <item name="cpu.awake">1.6</item>
+  <!-- Current when CPU is idle -->
+  <item name="cpu.idle">1.6</item>
+  <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
+  <item name="battery.capacity">2420</item>
 </device>
