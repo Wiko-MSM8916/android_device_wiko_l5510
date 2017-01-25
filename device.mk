@@ -76,6 +76,10 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera
 
+# Browser
+PRODUCT_PACKAGES += \
+    Gello
+
 # Prop configs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
