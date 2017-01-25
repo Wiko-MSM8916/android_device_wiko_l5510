@@ -81,6 +81,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
     qemu.hw.mainkeys=0 \
     sys.io.scheduler=bfq \
+
+# Minimum CPU frequency
+ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.min_freq_0=400000
 
 # Enable USB OTG in storage setting
