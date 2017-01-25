@@ -3,4 +3,6 @@ type memcheck_exec, exec_type, file_type;
 
 init_daemon_domain(memcheck)
 
-allow memcheck default_prop:property_service set;
+unix_socket_connect(memcheck, property, init)
+
+allow memcheck config_prop:property_service set;
