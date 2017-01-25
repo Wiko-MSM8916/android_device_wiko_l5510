@@ -165,10 +165,6 @@ on charger
    chmod 0664 /sys/class/power_supply/battery/current_now
    chmod 0664 /sys/class/power_supply/battery/voltage_now
 
-on post-fs-data
-     mkdir /data/dpm/nsrm 0771 system system
-     chown system system /data/dpm/nsrm
-
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
@@ -189,14 +185,6 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
-
-service cnd /system/bin/cnd
-    class late_start
-    socket cnd stream 660 root inet
-
-service dpmd /system/bin/dpmd
-    class late_start
-    socket dpmd stream 660 root system
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
