@@ -45,7 +45,7 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm.h"
+#include "init_msm8916.h"
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
@@ -187,15 +187,11 @@ err_ret:
     return ret;
 }
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void init_target_properties()
 {
     char device[PROP_VALUE_MAX];
     char modem_version[IMG_VER_BUF_LEN];
     int rc;
-
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
 
     rc = property_get("ro.product.name", device);
     if (!rc || (strstr(device, "l5510") == NULL))
@@ -215,8 +211,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
 
     /* Unified description and fingerprint for now */
-    property_set("ro.build.description", "l5510-user 5.0.2 LRX22G eng.android.20160222");
-    property_set("ro.build.fingerprint", "WIKO/l5510/l5510:5.0.2/LRX22G/android08192057:user/release-keys");
+    property_set("ro.build.description", "l5510-user 5.1.1 LRX22G eng.android.20160222");
+    property_set("ro.build.fingerprint", "WIKO/l5510/l5510:5.1.1/LRX22G/android08192057:user/release-keys");
 
     ERROR("Setup %s properties done!\n", board_id);
 

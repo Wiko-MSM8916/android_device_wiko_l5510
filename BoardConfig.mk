@@ -25,7 +25,7 @@ TARGET_BOOTLOADER_BOARD_NAME :=
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 androidboot.selinux=permissive 
-TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
+TARGET_KERNEL_SOURCE := kernel/wiko/msm8916
 TARGET_KERNEL_CONFIG := cyanogenmod_l5510_defconfig
 
 # Arch
@@ -38,7 +38,7 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # l5510 init
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_l5510.cpp
+TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.cpp
 TARGET_UNIFIED_DEVICE := true
 
 # adb has root
