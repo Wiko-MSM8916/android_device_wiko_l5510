@@ -17,6 +17,9 @@ $(call inherit-product, device/wiko/l5510/full_l5510.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+# Must define platform variant before including any common things
+TARGET_BOARD_PLATFORM_VARIANT := msm8916
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := l5510,l900
 
