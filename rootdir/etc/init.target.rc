@@ -166,6 +166,7 @@ on charger
    chmod 0664 /sys/class/power_supply/battery/voltage_now
 
 on init
+    export LD_SHIM_LIBS /system/vendor/lib/libWVStreamControlAPI_L3.so|libshim_boringssl.so
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on property:service.bootanim.exit=1
@@ -174,17 +175,6 @@ on property:service.bootanim.exit=1
     swapon_all fstab.qcom
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
-
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
@@ -218,6 +208,12 @@ service imscmservice /system/bin/imscmservice
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start imscmservice
+
+service memcheck /system/bin/memcheck
+    user root
+    group root
+    class late_start
+    oneshot
 
 on property:sys.boot_completed=1
     start config_lineout
