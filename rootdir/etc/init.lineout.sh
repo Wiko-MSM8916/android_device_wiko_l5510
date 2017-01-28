@@ -1,4 +1,4 @@
-+#!/system/bin/sh
+#!/system/bin/sh
 # Copyright (c) 2016, Ketut Putu Kumajaya
 #
 # Redistribution and use in source and binary forms, with or without

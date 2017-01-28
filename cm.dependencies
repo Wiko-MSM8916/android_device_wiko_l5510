@@ -1,6 +1,13 @@
-[
   {
     "repository": "android_device_cyanogen_msm8916-common",
     "target_path": "device/cyanogen/msm8916-common"
+  },
+  {
+    "repository": "android_kernel_wiko_msm8916",
+    "target_path": "kernel/wiko/msm8916"
+  },
+  {
+    "repository": "android_external_stlport",
+    "target_path": "external/stlport"
   }
 ]
