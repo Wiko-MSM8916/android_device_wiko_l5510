@@ -1256,25 +1256,6 @@ int QCamera2HardwareInterface::openCamera()
        }
     }
 
-    //check if video preview 480p support is enabled
-    property_get("persist.camera.480p_preview.enable", value, "0");
-    enable_4k2k = atoi(value) > 0 ? 1 : 0;
-    ALOGD("%s: enable_480p_preview is %d", __func__, enable_4k2k);
-    if (!enable_4k2k) {
-       //if the 480p size exists in the supported preview size, remove it
-       bool found;
-       cam_dimension_t size_480p;
-       size_480p.width = 720;
-       size_480p.height = 480;
-
-       found = removeSizeFromList(gCamCapability[mCameraId]->preview_sizes_tbl,
-                                  gCamCapability[mCameraId]->preview_sizes_tbl_cnt,
-                                  size_480p);
-       if (found) {
-          gCamCapability[mCameraId]->preview_sizes_tbl_cnt--;
-       }
-    }
-
     int32_t rc = m_postprocessor.init(jpegEvtHandle, this);
     if (rc != 0) {
         ALOGE("Init Postprocessor failed");
@@ -1557,7 +1538,11 @@ uint8_t QCamera2HardwareInterface::getBufNumRequired(cam_stream_type_t stream_ty
         } else {
             //preview window might not be set at this point. So, query directly
             //from BufferQueue implementation of gralloc buffers.
+#ifdef USE_KK_CODE
+            minUndequeCount = BufferQueue::MIN_UNDEQUEUED_BUFFERS;
+#else
             minUndequeCount = 2;
+#endif
         }
     }
 
@@ -4716,9 +4701,11 @@ int32_t QCamera2HardwareInterface::addPreviewChannel()
     QCameraChannel *pChannel = NULL;
 
     if (m_channels[QCAMERA_CH_TYPE_PREVIEW] != NULL) {
-        CDBG_HIGH("%s : Preview Channel already added and so delete it", __func__);
-        delete m_channels[QCAMERA_CH_TYPE_PREVIEW];
-        m_channels[QCAMERA_CH_TYPE_PREVIEW] = NULL;
+        // Using the no preview torch WA it is possible
+        // to already have a preview channel present before
+        // start preview gets called.
+        CDBG_HIGH(" %s : Preview Channel already added!", __func__);
+        return NO_ERROR;
     }
 
     pChannel = new QCameraChannel(mCameraHandle->camera_handle,
