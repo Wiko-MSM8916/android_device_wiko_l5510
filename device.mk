@@ -21,6 +21,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
@@ -69,24 +70,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     SnapdragonCamera \
     camera.msm8916 \
-    libmm-qcamera \
-    mm-qcamera-app \
-    mm-qcamera-deamon \
-    libmmjpeg_interface \
-    libmm-omxcore \
-    libqomx_core
-
-# Snap Camera
-PRODUCT_PACKAGES += \
-    Snap
-
-# App
-PRODUCT_PACKAGES += \
-    SlimFileManager \
-    SoundRecorder \
-    Music
-
-
+    libmm-qcamera
 
 # Prop configs
 PRODUCT_PROPERTY_OVERRIDES += \

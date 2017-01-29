@@ -23,6 +23,6 @@ $(call inherit-product, device/wiko/l5510/device.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := l5510
 PRODUCT_NAME := full_l5510
-PRODUCT_BRAND := WIKO
+PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := RIDGE 4G
 PRODUCT_MANUFACTURER := WIKO

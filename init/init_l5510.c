@@ -2,6 +2,7 @@
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
    Copyright (C) 2015, The CyanogenMod Project
    Copyright (C) 2015, Ketut P. Kumajaya
+
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -14,6 +15,7 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
+
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -203,60 +205,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_set("ro.product.board", board_id);
     ERROR("Detected board ID=%s\n", board_id);
 
-    if (strcmp(board_id, "S88047E1") == 0) {
-        property_set("ro.build.product", "HM2014817");
-        property_set("ro.product.device", "HM2014817");
-        property_set("ro.product.model", "2014817");
-        property_set("ro.product.name", "2014817");
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
-    } else if (strcmp(board_id, "S88047D1") == 0) {
-        property_set("ro.build.product", "HM2014819");
-        property_set("ro.product.device", "HM2014819");
-        property_set("ro.product.model", "2014819");
-        property_set("ro.product.name", "2014819");
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
-    } else if (strcmp(board_id, "S88047C1") == 0) {
-        property_set("ro.build.product", "HM2014818");
-        property_set("ro.product.device", "HM2014818");
-        property_set("ro.product.model", "2014818");
-        property_set("ro.product.name", "2014818");
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
-        property_set("persist.dbg.volte_avail_ovr", "1");
-        property_set("persist.dbg.vt_avail_ovr", "1");
-    } else if (strcmp(board_id, "S88047B2") == 0) {
-        property_set("ro.build.product", "HM2014821");
-        property_set("ro.product.device", "HM2014821");
-        property_set("ro.product.model", "2014821");
-        property_set("ro.product.name", "2014821");
-        property_set("ro.telephony.default_network", "22,1");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("persist.radio.sglte.eons_domain", "ps");
-    } else if (strcmp(board_id, "S88047B1") == 0) {
-        property_set("ro.build.product", "HM2014812");
-        property_set("ro.product.device", "HM2014812");
-        property_set("ro.product.model", "2014812");
-        property_set("ro.product.name", "2014812");
-        property_set("ro.telephony.default_network", "22,1");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("persist.radio.sglte.eons_domain", "ps");
-    } else if ((strcmp(board_id, "S86047A1") == 0) || (strcmp(board_id, "S86047A1_CD") == 0)) {
-        property_set("ro.build.product", "HM2014813");
-        property_set("ro.product.device", "HM2014813");
-        property_set("ro.product.model", "2014813");
-        property_set("ro.product.name", "2014813");
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
-    } else if ((strcmp(board_id, "S86047A2") == 0) || (strcmp(board_id, "S86047A2_CD") == 0)) {
-        property_set("ro.build.product", "HM2014112");
-        property_set("ro.product.device", "HM2014112");
-        property_set("ro.product.model", "2014112");
-        property_set("ro.product.name", "2014112");
-        property_set("ro.telephony.default_network", "9,1");
-        property_set("telephony.lteOnCdmaDevice", "0");
-    } else { /* RIDGE 4G */
+    if (strcmp(board_id, "l5510") == 0) { 
         property_set("ro.build.product", "l5510");
         property_set("ro.product.device", "l5510");
         property_set("ro.product.model", "RIDGE 4G");
@@ -266,8 +215,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     }
 
     /* Unified description and fingerprint for now */
-    property_set("ro.build.description", "l5510-user 5.1.1 LRX22G eng.android.20160222");
-    property_set("ro.build.fingerprint", "WIKO/l5510/l5510:5.1.1/LRX22G/android08192057:user/release-keys");
+    property_set("ro.build.description", "l5510-user 5.0.2 LRX22G eng.android.20160222");
+    property_set("ro.build.fingerprint", "WIKO/l5510/l5510:5.0.2/LRX22G/android08192057:user/release-keys");
 
     ERROR("Setup %s properties done!\n", board_id);
 
