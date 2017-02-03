@@ -184,7 +184,6 @@ PRODUCT_PACKAGES += \
     webview
     
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so \
     camera2.portability.force_api=1
 
 PRODUCT_COPY_FILES += \
