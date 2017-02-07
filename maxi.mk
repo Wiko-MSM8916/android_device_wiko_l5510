@@ -14,13 +14,13 @@
 
 $(call inherit-product, device/wiko/l5510/full_l5510.mk)
 
-# Inherit some common slim stuff.
-$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+# Inherit some common maximaxi stuff.
+$(call inherit-product, vendor/maxi/config/common_full_phone.mk)
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := l5510,l900
 
-PRODUCT_NAME := slim_l5510
+PRODUCT_NAME := maxi_l5510
 BOARD_VENDOR := wiko
 PRODUCT_DEVICE := l5510
 
