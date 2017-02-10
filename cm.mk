@@ -21,7 +21,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := l5510,l900
+TARGET_OTA_ASSERT_DEVICE := l5510,l5320
 
 PRODUCT_NAME := cm_l5510
 BOARD_VENDOR := wiko
