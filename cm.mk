@@ -18,7 +18,7 @@ $(call inherit-product, device/wiko/l5510/full_l5510.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := l5510,l900
+TARGET_OTA_ASSERT_DEVICE := l5510,l5320
 
 PRODUCT_NAME := cm_l5510
 BOARD_VENDOR := wiko
