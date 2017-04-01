@@ -167,7 +167,8 @@ on charger
 
 # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 49152
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 
 on init
     export LD_SHIM_LIBS /system/vendor/lib/libWVStreamControlAPI_L3.so|libshim_boringssl.so
