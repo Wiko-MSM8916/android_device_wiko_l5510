@@ -165,6 +165,10 @@ on charger
    chmod 0664 /sys/class/power_supply/battery/current_now
    chmod 0664 /sys/class/power_supply/battery/voltage_now
 
+# Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 49152
+
 on init
     export LD_SHIM_LIBS /system/vendor/lib/libWVStreamControlAPI_L3.so|libshim_boringssl.so
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
