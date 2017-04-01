@@ -1,12 +1,3 @@
-# Audio
-PRODUCT_PACKAGES += \
-    libqcomvisualizer \
-    libqcompostprocbundle
-
-# On boot audio lineout config
-PRODUCT_PACKAGES += \
-    init.lineout.sh
-
 # Audio configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/acdb/QRD_Bluetooth_cal.acdb:system/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
@@ -27,6 +18,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
     $(LOCAL_PATH)/audio/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
 
+# On boot audio lineout config
+PRODUCT_PACKAGES += \
+    init.lineout.sh
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
@@ -36,5 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true
+    persist.audio.fluence.speaker=false
+
+
 

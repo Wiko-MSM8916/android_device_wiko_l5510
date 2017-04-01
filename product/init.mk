@@ -2,6 +2,4 @@
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc \
-    init.target.power.rc \
-    memcheck
 
