@@ -15,7 +15,7 @@
 
 FORCE_32_BIT := true
 
-include device/cyanogen/msm8916-common/BoardConfigCommon.mk
+include device/wiko/msm8916-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/wiko/l5510
 include $(DEVICE_PATH)/board/*.mk
