@@ -1,4 +1,4 @@
 # kernel
 TARGET_KERNEL_SOURCE := kernel/wiko/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_l5510_defconfig
+TARGET_KERNEL_CONFIG := lienage_l5510_defconfig
 BOARD_KERNEL_CMDLINE += sched_enable_hmp=1 phy-msm-usb.floated_charger_enable=1
