@@ -1,5 +1,5 @@
 # Audio
-ro.qc.sdk.audio.fluencetype=fluence
+ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
@@ -10,13 +10,13 @@ persist.dpm.feature=3
 persist.data.target=dpm1
 
 # Radio
-rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
-persist.radio.multisim.config=dsds
-ril.ecclist=112,911,110,122,119,120,000,118
-ril.ecclist1=112,911,110,122,119,120,000,118
-ril.subscription.types=RUIM
-persist.radio.rat_on=combine
-
+persist.radio.multisim.config=dsds 
+persist.radio.custom_ecc=1 
+persist.radio.ecc_hard_1=112,911,110,122,119,120,000,118 
+persist.radio.ecc_hard_count=1 
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so 
+ril.subscription.types=RUIM 
+persist.radio.rat_on=combine 
 ro.ril.multi_rat_capable=true
 
 # Disable the thumbnail encoding in order to reduce the power
